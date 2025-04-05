@@ -21,7 +21,7 @@ app.get('/recipes', (req, res) => {
   if (ingredient) {
     results = results.filter(recipe =>
       recipe.ingredients.some(ing =>
-        ing.ingredient.toLowerCase().includes(ingredient.toLowerCase())
+        ing.ingredient && ing.ingredient.toLowerCase().includes(ingredient.toLowerCase()) // Check if ingredient exists before calling .toLowerCase()
       )
     );
   }
