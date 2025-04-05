@@ -12,8 +12,8 @@ app.get('/recipes', (req, res) => {
 
   // Filter by cocktail name (if provided)
   if (name) {
-    results = results.filter(r =>
-      r.name.toLowerCase().includes(name.toLowerCase())
+    results = results.filter(recipe =>
+      recipe.name.toLowerCase().includes(name.toLowerCase())
     );
   }
 
@@ -24,6 +24,11 @@ app.get('/recipes', (req, res) => {
         ing.ingredient.toLowerCase().includes(ingredient.toLowerCase())
       )
     );
+  }
+
+  // If no results found, send a 404
+  if (results.length === 0) {
+    return res.status(404).json({ error: "No matching recipes found" });
   }
 
   res.json(results);
