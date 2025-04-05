@@ -6,15 +6,27 @@ const PORT = process.env.PORT || 3000;
 const recipes = JSON.parse(fs.readFileSync('recipes.json', 'utf-8'));
 
 app.get('/recipes', (req, res) => {
-  const { name } = req.query;
+  const { name, ingredient } = req.query;
+
+  let results = recipes;
+
+  // Filter by cocktail name (if provided)
   if (name) {
-    const filtered = recipes.filter(r =>
+    results = results.filter(r =>
       r.name.toLowerCase().includes(name.toLowerCase())
     );
-    res.json(filtered);
-  } else {
-    res.json(recipes);
   }
+
+  // Filter by ingredient name (if provided)
+  if (ingredient) {
+    results = results.filter(recipe =>
+      recipe.ingredients.some(ing =>
+        ing.ingredient.toLowerCase().includes(ingredient.toLowerCase())
+      )
+    );
+  }
+
+  res.json(results);
 });
 
 app.listen(PORT, () => console.log(`API running on port ${PORT}`));
