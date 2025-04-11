@@ -59,13 +59,17 @@
     "abv": 0,
     "taste": "sweet"
   },
+  "White Cream liqueur": {
+    "abv": 20,
+    "taste": "sweet"
+  },
+  "Green Cream liqueur": {
+    "abv": 20,
+    "taste": "sweet"
+  },
   "Cream liqueur": {
     "abv": 20,
-    "taste": null
-  },
-  "Créme liqueur": {
-    "abv": 20,
-    "taste": null
+    "taste": "sweet"
   },
   "Dark rum": {
     "abv": 40,
@@ -75,7 +79,7 @@
     "abv": 28,
     "taste": null
   },
-  "DOM Bénédictine": {
+  "DOM Benedictine": {
     "abv": 40,
     "taste": null
   },
@@ -110,6 +114,10 @@
   "Grapefruit juice": {
     "abv": 0,
     "taste": "sour"
+  },
+  "Grenadine": {
+    "abv": 0,
+    "taste": "sweet"
   },
   "Hot coffee": {
     "abv": 0,
@@ -191,9 +199,13 @@
     "abv": 40,
     "taste": "sweet"
   },
-  "Vermouth": {
+  "Sweet Red Vermouth": {
     "abv": 17,
-    "taste": null
+    "taste": "sweet"
+  },
+  "Dry Vermouth": {
+    "abv": 17,
+    "taste": "dry"
   },
   "Vodka": {
     "abv": 40,
@@ -206,5 +218,9 @@
   "White rum": {
     "abv": 40,
     "taste": null
+  },
+  "Fernet": {
+    "abv": 38,
+    "taste": "bitter"
   }
 }
